@@ -35,8 +35,13 @@ nav {
   font-family: Titillium Web;
   font-size: 30px;
   line-height: 75px;
-  padding-left: 10px;
+  letter-spacing: 3px;
+  padding-left: 20px;
   font-weight: bold;
+}
+
+#pink {
+  color: lightpink;
 }
 
 .menu-list {
