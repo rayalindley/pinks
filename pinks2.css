@@ -4,11 +4,9 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  font-family: Titillium Web;
 }
 
-body {
-
-}
 
 nav {
   height: 75px;
@@ -41,7 +39,7 @@ nav {
 }
 
 #pink {
-  color: lightpink;
+  color: rgb(244, 167, 187);
 }
 
 .menu-list {
@@ -70,7 +68,8 @@ nav {
   text-transform: uppercase;
 }
 
-.menu-list li a.active, .menu-list li a:hover {
+.menu-list li a.active,
+.menu-list li a:hover {
   color: white;
   transition: 0.5s;
 }
@@ -85,7 +84,25 @@ nav {
   cursor: pointer;
 }
 
+.close-btn {
+  display: none;
+}
+
 #check {
+  display: none;
+}
+
+#check:checked ~ .close-btn {
+  display: block;
+  font-size: 37px;
+  color: black;
+  float: right;
+  line-height: 75px;
+  margin-right: 42px;
+  cursor: pointer;
+}
+
+#check:checked ~ .menu-btn {
   display: none;
 }
 
@@ -98,11 +115,94 @@ nav {
 }
 
 .bg-main {
+  opacity: .5;
+  position: absolute;
+  z-index: -1;
   width: 100%;
   height: 100vh;
 }
 
-@media only screen and (min-width: 900px) {
+/*
+members.html
+*/
+
+.content {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.header-area {
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  width: 200px;
+}
+
+.sub-title {
+  font-size: 10px;
+  font-weight: 400;
+  text-align: right;
+  height: 0;
+  flex: 1;
+}
+
+
+
+.detail-area ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 200px;
+}
+
+.profile {
+  width: 100%;
+}
+
+.member-name {
+  justify-content: below;
+}
+
+/*
+ * _detail nav
+ */
+
+/*
+.header-area,
+.title_name {
+	color: #282828;
+	font-size: 3.6em;
+	/*text-transform: uppercase;
+	margin-bottom: .5em;
+}
+
+.header-area,
+.title_menu {
+	margin-top: 2em;
+}
+
+#nini {
+  filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+#nini:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+*/
+
+
+
+
+
+@media only screen and (min-width: 980px) {
   .icon-and-text {
     margin-left: 25px;
   }
@@ -112,7 +212,8 @@ nav {
     background-color: transparent;
   }
 
-  .menu-btn {
+  .menu-btn,
+  .close-btn {
     display: none;
   }
 
@@ -135,7 +236,10 @@ nav {
     transition: none;
   }
 
-  .menu-list li a.active, .menu-list li a:hover {
+  .menu-list li a.active,
+  .menu-list li a:hover {
     color: black;
+    text-decoration: underline;
+    text-decoration-color: rgb(244, 167, 187);
   }
 }
